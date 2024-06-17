@@ -40,8 +40,6 @@ const Navigator = () => {
     ];
   }, [pathname]);
 
-  console.log(pathname);
-
   return (
     <div>
       <section className="flex flex-col gap-8 p-6">
