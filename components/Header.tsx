@@ -1,24 +1,15 @@
 "use client";
 
-import { FaChromecast } from "react-icons/fa";
 import { FiSearch } from "react-icons/fi";
 
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from "@/components/ui/drawer";
+import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 import UserAvatar from "./UserAvatar";
 import PagePadding from "./PagePadding";
 import Logo from "./Logo";
 import Navigator from "./Navigator";
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
+import { ModeToggle } from "./ThemeButton";
 
 const HeaderDrawer = ({ children }: { children: React.ReactNode }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,7 +32,6 @@ const HeaderDrawer = ({ children }: { children: React.ReactNode }) => {
 const Header = ({ children }: { children: React.ReactNode }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const headRef = useRef<HTMLDivElement>(null);
-  console.log(isScrolled);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -82,8 +72,8 @@ const Header = ({ children }: { children: React.ReactNode }) => {
               </article>
             </HeaderDrawer>
             <article className="flex gap-6 items-center">
-              <FaChromecast size={26} />
               <UserAvatar />
+              <ModeToggle />
             </article>
           </div>
         </PagePadding>
