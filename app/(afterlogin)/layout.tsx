@@ -10,7 +10,7 @@ export default function Layout({ children }: Props) {
   return (
     <div className="flex w-full min-h-screen">
       <Sidebar />
-      <div className="flex-1 lg:ml-[240px]">
+      <div className="flex-1 ">
         <Header>{children}</Header>
       </div>
     </div>

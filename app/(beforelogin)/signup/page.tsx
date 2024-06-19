@@ -5,8 +5,15 @@ import { Input } from "@/components/ui/input";
 import React from "react";
 import { useFormState } from "react-dom";
 import { signUp } from "./actions";
+import {
+  PASSWORD_MIN_LENGTH,
+  USERNAME_MAX_LENGTH,
+  USERNAME_MIN_LENGTH,
+} from "@/types/constants";
+import { useRouter } from "next/navigation";
 
 const SignUp = () => {
+  const { push } = useRouter();
   const [state, dispatch] = useFormState(signUp, null);
   return (
     <div className="flex flex-col gap-10 py-8 px-6">
@@ -20,7 +27,8 @@ const SignUp = () => {
           type="text"
           placeholder="Username"
           required
-          maxLength={10}
+          minLength={USERNAME_MIN_LENGTH}
+          maxLength={USERNAME_MAX_LENGTH}
           errors={state?.fieldErrors.username}
         />
         <Input
@@ -35,6 +43,7 @@ const SignUp = () => {
           type="password"
           placeholder="Password"
           required
+          minLength={PASSWORD_MIN_LENGTH}
           errors={state?.fieldErrors.password}
         />
         <Input
@@ -44,8 +53,18 @@ const SignUp = () => {
           required
           errors={state?.fieldErrors.confirm_password}
         />
-        <Button>회원가입</Button>
+        <Button text="회원가입" />
       </form>
+      <div className="text-center text-sm">
+        이미 아이디가 없으신가요?{" "}
+        <span
+          className="font-bold text-sky-500 cursor-pointer hover:underline hover:text-sky-300 transition"
+          onClick={() => push("/signin")}
+        >
+          로그인
+        </span>{" "}
+        하러 가기
+      </div>
     </div>
   );
 };

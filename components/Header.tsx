@@ -55,7 +55,7 @@ const Header = ({ children }: { children: React.ReactNode }) => {
         )}
       >
         <PagePadding>
-          <div className="h-[64px] flex items-center justify-between">
+          <div className="h-[64px]  flex items-center justify-between">
             <article className="h-[42px] min-w-[480px] hidden lg:flex  bg-neutral-700 opacity-75 rounded-2xl px-[16px] gap-[16px]  items-center">
               <div>
                 <FiSearch size={24} />
