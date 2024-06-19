@@ -31,7 +31,6 @@ const HeaderDrawer = ({ children }: { children: React.ReactNode }) => {
 
 const Header = ({ children }: { children: React.ReactNode }) => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const headRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,7 +45,7 @@ const Header = ({ children }: { children: React.ReactNode }) => {
   }, []);
 
   return (
-    <header ref={headRef} className="relative w-full h-full">
+    <header className="relative w-full h-full">
       {/*  searchSection */}
       <section
         className={cn(

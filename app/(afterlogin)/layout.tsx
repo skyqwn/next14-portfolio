@@ -7,12 +7,5 @@ type Props = {
 };
 
 export default function Layout({ children }: Props) {
-  return (
-    <div className="flex w-full min-h-screen">
-      <Sidebar />
-      <div className="flex-1 ">
-        <Header>{children}</Header>
-      </div>
-    </div>
-  );
+  return <Sidebar>{children}</Sidebar>;
 }

@@ -1,15 +1,21 @@
 import React from "react";
 import Navigator from "./Navigator";
 import Logo from "./Logo";
+import Header from "./Header";
 
-const Sidebar = () => {
+const Sidebar = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="hidden lg:flex lg:flex-col lg:fixed lg:top-0 lg:left-0 lg:w-[240px] lg:h-full lg:border-r-[1px] lg:border-neutral-600">
-      <div className="p-[24px]">
-        <Logo />
-      </div>
-      <div>
-        <Navigator />
+    <div className="flex  h-full">
+      <nav className="hidden lg:block w-[240px] border-r-[1px] border-neutral-600">
+        <div className="p-[24px]">
+          <Logo />
+        </div>
+        <div>
+          <Navigator />
+        </div>
+      </nav>
+      <div className="w-full lg:w-[calc(100%-240px)]">
+        <Header>{children}</Header>
       </div>
     </div>
   );
