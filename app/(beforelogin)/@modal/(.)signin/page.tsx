@@ -1,6 +1,7 @@
-import SigninModal from "../_components/SigninModal";
+import React from "react";
+import SigninModal from "../../_components/SigninModal";
 
-const SignIn = () => {
+const Page = () => {
   return (
     <div className="absolute bg-slate-700 bg-opacity-60 w-full h-full">
       <SigninModal />
@@ -8,4 +9,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default Page;
